@@ -1,7 +1,7 @@
 // based on this work:
 // https://www.reddit.com/r/kde/comments/7h6g8e/move_window_to_center_patch/
 
-// checkout KWin scipting tutorial for details:
+// checkout KWin scripting tutorial for details:
 // https://techbase.kde.org/Development/Tutorials/KWin/Scripting
 
 var GEOMETRY_TOLERANCE_PERCENT = 0.005;
