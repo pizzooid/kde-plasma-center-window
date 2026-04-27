@@ -10,6 +10,26 @@ I use this functionality every day with my 27" 2K screen. It's super useful to q
 
 # Installation
 
-Clone this repo somewhere. Then just run plasmapkg2 --install . inside the directory.
+### Plasma 6 (Recommended)
+Clone this repo and run the following command inside the directory:
+```bash
+kpackagetool6 --type=KWin/Script --install .
+```
+If you are updating the script, use:
+```bash
+kpackagetool6 --type=KWin/Script --upgrade .
+```
+
+### Plasma 5
+Run the following command inside the directory:
+```bash
+plasmapkg2 --install .
+```
+If you are updating, use:
+```bash
+plasmapkg2 --upgrade .
+```
+
+After installation, enable the script in **System Settings > Window Management > KWin Scripts** and configure your shortcuts in the **Shortcuts** section of System Settings.
 
 The script itself is SUPER easy to follow so checkout contents/code/main.js and customize it to fullfil your needs.

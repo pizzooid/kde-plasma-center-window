@@ -1,0 +1,21 @@
+{
+    "KPackageStructure": "KWin/Script",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "FungusAdamAndPietariHeino"
+            }
+        ],
+        "Description": "Toggle the current window between centered 50% and 80% sizes",
+        "Icon": "preferences-system-windows-script-test",
+        "Id": "centercurrentwindow",
+        "Name": "Center current window",
+        "ServiceTypes": [
+            "KWin/Script"
+        ],
+        "Version": "1.1"
+    },
+    "X-KDE-PluginInfo-Name": "centercurrentwindow",
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js"
+}
