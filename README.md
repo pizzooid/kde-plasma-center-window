@@ -2,11 +2,11 @@
 
 This is a very simple KWin script that does three things via shortcuts that the user can control:
 
-* resizes the current window to 100 % height and 50 % width of the screen
+* toggles the current window between 50 % height and width and 80 % height and width of the screen
 * grows it horizontally if needed in 40 px steps
 * shrinks it horizontally if needed in 40 px steps
 
-I use this functionality every day with my 27" 2K screen. It's super useful to not have your web browser or what not take the whole horizontal space. The growing and shrinking are extremely useful, too.
+I use this functionality every day with my 27" 2K screen. It's super useful to quickly switch between a compact centered window and a larger one. The growing and shrinking are extremely useful, too.
 
 # Installation
 

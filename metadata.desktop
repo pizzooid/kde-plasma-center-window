@@ -4,7 +4,7 @@
 
 [Desktop Entry]
 Name=Center current window
-Comment=Set the size of the current window to 1/2 of screen and center it
+Comment=Toggle the current window between centered 50% and 80% sizes
 Icon=preferences-system-windows-script-test
 Type=Service
 
