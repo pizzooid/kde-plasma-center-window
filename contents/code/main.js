@@ -28,6 +28,7 @@ function toggleCurrentWindowSize() {
   var win = workspace.activeClient;
   var displayWidth = workspace.displayWidth;
   var displayHeight = workspace.displayHeight;
+  // Allow a small tolerance because KWin can report geometry with minor rounding differences.
   var geometryTolerance = Math.max(2, Math.round(Math.min(displayWidth, displayHeight) * 0.005));
   var halfWidth = Math.round(displayWidth * 0.5);
   var halfHeight = Math.round(displayHeight * 0.5);
@@ -35,13 +36,13 @@ function toggleCurrentWindowSize() {
   var largeHeight = Math.round(displayHeight * 0.8);
   var halfX = Math.round((displayWidth - halfWidth) / 2);
   var halfY = Math.round((displayHeight - halfHeight) / 2);
-  var isHalfSize =
+  var isHalfSizeAndCentered =
       Math.abs(win.x - halfX) <= geometryTolerance &&
       Math.abs(win.y - halfY) <= geometryTolerance &&
       Math.abs(win.width - halfWidth) <= geometryTolerance &&
       Math.abs(win.height - halfHeight) <= geometryTolerance;
-  var targetWidth = isHalfSize ? largeWidth : halfWidth;
-  var targetHeight = isHalfSize ? largeHeight : halfHeight;
+  var targetWidth = isHalfSizeAndCentered ? largeWidth : halfWidth;
+  var targetHeight = isHalfSizeAndCentered ? largeHeight : halfHeight;
 
   win.geometry = {
       x: Math.round((displayWidth - targetWidth) / 2),
