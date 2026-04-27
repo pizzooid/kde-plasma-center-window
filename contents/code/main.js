@@ -28,8 +28,9 @@ function toggleCurrentWindowSize() {
   var win = workspace.activeClient;
   var displayWidth = workspace.displayWidth;
   var displayHeight = workspace.displayHeight;
+  var geometryTolerancePercent = 0.005;
   // Allow a small tolerance because KWin can report geometry with minor rounding differences.
-  var geometryTolerance = Math.max(2, Math.round(Math.min(displayWidth, displayHeight) * 0.005));
+  var geometryTolerance = Math.max(2, Math.round(Math.min(displayWidth, displayHeight) * geometryTolerancePercent));
   var halfWidth = Math.round(displayWidth * 0.5);
   var halfHeight = Math.round(displayHeight * 0.5);
   var largeWidth = Math.round(displayWidth * 0.8);
