@@ -28,11 +28,14 @@ function toggleCurrentWindowSize() {
   var win = workspace.activeClient;
   var displayWidth = workspace.displayWidth;
   var displayHeight = workspace.displayHeight;
+  var sizeTolerance = 5;
   var halfWidth = Math.round(displayWidth * 0.5);
   var halfHeight = Math.round(displayHeight * 0.5);
   var largeWidth = Math.round(displayWidth * 0.8);
   var largeHeight = Math.round(displayHeight * 0.8);
-  var isHalfSize = win.width === halfWidth && win.height === halfHeight;
+  var isHalfSize =
+      Math.abs(win.width - halfWidth) <= sizeTolerance &&
+      Math.abs(win.height - halfHeight) <= sizeTolerance;
   var targetWidth = isHalfSize ? largeWidth : halfWidth;
   var targetHeight = isHalfSize ? largeHeight : halfHeight;
 
