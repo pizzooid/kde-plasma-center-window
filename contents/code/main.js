@@ -4,6 +4,9 @@
 // checkout KWin scipting tutorial for details:
 // https://techbase.kde.org/Development/Tutorials/KWin/Scripting
 
+var GEOMETRY_TOLERANCE_PERCENT = 0.005;
+var MIN_GEOMETRY_TOLERANCE_PIXELS = 2;
+
 function growCurrentWindow() {
   var win = workspace.activeClient;
   win.geometry = {
@@ -28,9 +31,11 @@ function toggleCurrentWindowSize() {
   var win = workspace.activeClient;
   var displayWidth = workspace.displayWidth;
   var displayHeight = workspace.displayHeight;
-  var geometryTolerancePercent = 0.005;
   // Allow a small tolerance because KWin can report geometry with minor rounding differences.
-  var geometryTolerance = Math.max(2, Math.round(Math.min(displayWidth, displayHeight) * geometryTolerancePercent));
+  var geometryTolerance = Math.max(
+      MIN_GEOMETRY_TOLERANCE_PIXELS,
+      Math.round(Math.min(displayWidth, displayHeight) * GEOMETRY_TOLERANCE_PERCENT)
+  );
   var halfWidth = Math.round(displayWidth * 0.5);
   var halfHeight = Math.round(displayHeight * 0.5);
   var largeWidth = Math.round(displayWidth * 0.8);
